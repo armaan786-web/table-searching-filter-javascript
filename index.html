@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container"><br><br><br><br>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Customer ID</th>
+                    <th>Mobile No</th>
+                    <th>Total Amount</th>
+                    <th>Installment Amount</th>
+                    <th>Remaining Amount</th>
+                    <th>Payment Mode</th>
+                    <th>Remarks</th>
+                    <th>Reference ID</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td>Rohan</td>
+                    <td>1</td>
+                    <td>4856275974</td>
+                    <td>40000</td>
+                    <td>400</td>
+                    <td>35000</td>
+                    <td>Cash</td>
+                    <td>Plot</td>
+                    <td>10</td>
+                    <td>05/07/2021</td>
+                </tr>
+                <tr>
+                    <td>Rahul</td>
+                    <td>2</td>
+                    <td>2475917495</td>
+                    <td>80000</td>
+                    <td>500</td>
+                    <td>30000</td>
+                    <td>UPI</td>
+                    <td>Car</td>
+                    <td>20</td>
+                    <td>06/07/2021</td>
+                </tr>
+                <tr>
+                    <td>Deepak</td>
+                    <td>3</td>
+                    <td>6729675968</td>
+                    <td>45000</td>
+                    <td>100</td>
+                    <td>33000</td>
+                    <td>Bank Transfer</td>
+                    <td>Ofice</td>
+                    <td>30</td>
+                    <td>06/07/2021</td>
+                </tr>
+                <tr>
+                    <td>Saurabh</td>
+                    <td>4</td>
+                    <td>4856295738</td>
+                    <td>34000</td>
+                    <td>800</td>
+                    <td>65000</td>
+                    <td>Net Banking</td>
+                    <td>Home</td>
+                    <td>40</td>
+                    <td>06/07/2021</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
